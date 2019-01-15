@@ -1,0 +1,37 @@
+{% extends 'adminlte/base.html' %}
+
+<title>
+    {% block title %}
+        EDU ANALYTICS
+    {% endblock %}
+</title>
+
+{% block branding %}{% endblock %}
+
+{% block javascript %}
+    {% block javascript_extras_top %}{% endblock javascript_extras_top%}
+    {% include 'adminlte/lib/_scripts.html' %}
+    {% block javascript_extras %}{% endblock javascript_extras%}
+{% endblock %}
+
+{% block stylesheets %}
+    {% include 'adminlte/lib/_styles.html' %}
+    <link rel="stylesheet" type="text/css" href="/static/css/app_estilos.css">
+    {% block stylesheets_extras %}{% endblock stylesheets_extras%}
+{% endblock %}
+
+{% block extra_head %}
+    <link rel="shortcut icon" href="/static/favicon.ico">
+{% endblock %}
+
+{% block nav_header %}
+    {% include 'app_header.html' %}
+{% endblock %}
+
+{% block nav_sidebar %}
+    {% include 'app_menu.html' %}
+{% endblock nav_sidebar %}
+
+{% block nav_footer %}
+{% endblock %}
+

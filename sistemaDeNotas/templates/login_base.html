@@ -1,0 +1,30 @@
+{% load static staticfiles %}
+<title>
+    {% block title %}
+        EDU ANALYTICS
+    {% endblock %}
+</title>
+
+{% block extra_head %}
+    <link rel="shortcut icon" href="/static/favicon.ico">
+{% endblock %}
+
+<html>
+    <head>
+	    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+        <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <link rel="stylesheet" href="{% static 'css/font-awesome/css/font-awesome.min.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+        {% load bootstrap3 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    </head>
+    <body>
+        <div id="wrapper">
+            {% block mensajes %}
+            {% endblock %}
+
+            {% block login_content %}
+            {% endblock %}
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% block user_panel %}{% endblock %}
+{% block nav_heading %}{% endblock %}
+
+{% block nav_links %}
+
+    <li> <a href="/admin/auth/"><i class="fa fa-fw fa-key"></i> <span>Autenticación y Autorización</span></a></li>
+    <li> <a href="/admin/core/"><i class="fa fa-fw fa-heartbeat"></i> <span>Core</span></a></li>
+    <li> <a href="/admin/exam/"><i class="fa fa-fw fa-file-o"></i> <span>Exam</span></a></li>
+    <li> <a href="/admin/guardian/"><i class="fa fa-fw fa-user-secret"></i> <span>Guardian</span></a></li>
+    <li> <a href="/admin/security/"><i class="fa fa-fw fa-lock"></i> <span>Security</span></a></li>
+
+{% endblock nav_links %}

@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Mont ExtraLight';
+  src: url('../fonts/Mont_ExtraLight.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mont Heavy';
+  src: url('../fonts/Mont_Heavy.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.search-menu {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: white;
+    outline: none;
+    }
+
+.dataTables_filter {
+    alignment: right;
+    text-align: right;
+
+}
+
+.form-control{
+    margin-left: 0.5em;
+}
+
+.boton-app {
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+    color: white;
+}

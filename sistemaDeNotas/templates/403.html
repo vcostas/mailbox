@@ -1,0 +1,12 @@
+{% extends "app_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Página no encontrada.' %}{% endblock %}
+
+{% block content %}
+
+<h2>{% trans 'No posee los permisos necesarios.' %}</h2>
+
+<p>{% trans "Lo sentimos, pero usted no posee los permisos necesarios." %}</p>
+
+{% endblock %}

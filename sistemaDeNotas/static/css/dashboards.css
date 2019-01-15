@@ -1,0 +1,188 @@
+/********************************************************************/
+/******************** VISUALIZACIÓN TEMPLATE ************************/
+/********************************************************************/
+
+.highcharts-credits {
+    display: none;
+}
+
+.small-box .icon {
+    -webkit-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+    font-size: 90px;
+    top: -2px;
+    color: rgba(0,0,0,0.15);
+}
+
+
+.small-box>.small-box-footer {
+    position: relative;
+    text-align: center;
+    padding: 3px 0;
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    z-index: 10;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+
+/********************************************************************/
+/******************** VISUALIZACIÓN TEMPLATE 1 **********************/
+/********************************************************************/
+
+.dashboard_template.dashboard_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    align-items: center;
+}
+
+.dashboard_template .box-dashlet {
+    width: 49%;
+    min-width: 380px;
+    height: 25%;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    align-self:stretch;
+}
+
+/********************************************************************/
+/******************** VISUALIZACIÓN TEMPLATE 2 **********************/
+/********************************************************************/
+
+.dashboard_template2.dashboard_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard_template2 .row_dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    align-items: center;
+}
+
+.dashboard_template2 .row1 > div {
+    padding: 5px;
+    width: 24%;
+    min-width: 180px;
+    height: 20%;
+    min-height: 3em;
+}
+
+.dashboard_template2 .row2 > div, .dashboard_template2 .row3 > div {
+    width: 49%;
+    min-width: 380px;
+    height: 40%;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dashboard_template2 .row2  .box-footer, .dashboard_template2 .row3  .box-footer {
+    background-color: rgba(0,0,0,0.15);
+    color: white;
+}
+
+/********************************************************************/
+/******************** VISUALIZACIÓN TEMPLATE 3 **********************/
+/********************************************************************/
+
+.dashboard_template3.dashboard_container {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.dashboard_template3 .column1 {
+    padding: 10px;
+    flex: 1;
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.dashboard_template3 .column2 {
+    padding: 10px;
+    flex: 3;
+    order: 1;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+
+.dashboard_template3 .column2 div {
+    width: 48%;
+    min-width: 300px;
+}
+
+.dashboard_template .box-dashlet {
+    width: 49%;
+    min-width: 380px;
+    height: 25%;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+    align-self:stretch;
+}
+
+/********************************************************************/
+/********************** FORMULARIO CREACION *************************/
+/********************************************************************/
+
+
+.content-header {
+    display: none;
+}
+
+.container-dashboard-edit form {
+    display: flex;
+    width:100%;
+    flex-flow: row wrap;
+}
+
+.container-dashboard-edit .title {
+    width: 100%;
+}
+
+.container-dashboard-edit .box, .container-dashboard-edit .mybox {
+    flex: 1;
+    margin-left:0.5em;
+    min-width: 25em;
+    padding: 0.5em;
+}
+
+.container-dashboard-edit .mybox {
+    padding: 0;
+}
+
+.container-dashboard-edit .my-box-footer {
+    flex-basis: 100%;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.container-dashboard-edit .my-box-footer button{
+    flex: 1;
+}
+
+.container-dashboard-edit .layout-button {
+    width: 60px;
+    height: 90px;
+    padding: 5px;
+}
+
+.container-dashboard-edit .layout-button.selected {
+    background: #49beed;
+    color: #ededed;
+}

@@ -1,0 +1,116 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+{% load static %}
+
+{% block user_panel %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+
+        function searchFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('input-search');
+            filter = input.value.toUpperCase();
+            ul = document.getElementsByClassName("sidebar-menu")[0];
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <div class="input-group" style="padding-left: 1.5em">
+        <p class="fa fa-search" style="color: lightgray"></p><space> </space>
+        <input id="input-search" class="search-menu" type="text" placeholder="Buscar" tabindex="-1" onkeyup="searchFunction()">
+    </div>
+{% endblock %}
+
+{% block nav_links_outer %}
+
+{% load  leftmenu_tag %}
+    {% autoescape off %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+
+        window.onload = function () {
+            //var jsonString = '{"menu":[{"text":"Mis Materias","url":"/materias","icon":"fa fa-list-alt","type":"I"},{"text":"Materias Coordinadas","url":"/materias","icon":"fa fa-list-alt","type":"I"},{"text":"Reportes","url":"#","icon":"fa fa-fw fa-bar-chart","type":"G","childs":[{"text":"Reporte de supervision","url":"/reportes/1","icon":"fa fa-circle-o","type":"I"},{"text":"Reporte de avance","url":"/reportes/2","icon":"fa fa-circle-o","type":"I"}]}]}';
+            var jsonMenu = {% get_leftmenu_jsontree %};
+
+            var jsonObject = JSON.parse(jsonMenu);
+            var newArrays = {};
+            var tree = document.getElementsByClassName("sidebar-menu")[0];
+
+            for (var i = 0; i < jsonObject.menu.length; i++) {
+                recurse(tree, jsonObject.menu[i]);
+            }
+        }
+
+        function recurse(domElement, treeNode) {
+            var ul, li,a,i,i2, span, span2, text;
+
+            if (treeNode.childs) {
+
+                li = document.createElement('li');
+                li.setAttribute("class", "treeview");
+                a = document.createElement('a');
+                a.setAttribute("href",treeNode.url);
+                a.setAttribute("class","dropdown-toggle");
+                a.setAttribute("data-toggle","dropdown");
+                i = document.createElement('i');
+                i.setAttribute("class",treeNode.icon);
+                span=  document.createElement('span');
+                text= document.createTextNode(treeNode.text);
+
+
+                span2=  document.createElement('span');
+                span2.setAttribute("class","pull-right-container");
+                i2 = document.createElement('i');
+                i2.setAttribute("class","fa fa-angle-left pull-right");
+                span2.appendChild(i2);
+
+                span.appendChild(text);
+                a.appendChild(i);
+                a.appendChild(span);
+                a.appendChild(span2)
+                li.appendChild(a);
+
+
+                ul = document.createElement('ul');
+                ul.setAttribute("class", "treeview-menu");
+                li.appendChild(ul);
+                domElement.appendChild(li);
+
+                 for (var i = 0; i < treeNode.childs.length; i++) {
+                     recurse(ul, treeNode.childs[i]);
+                 }
+            }
+            else {//Es un item I
+
+                li = document.createElement('li');
+
+                a = document.createElement('a');
+                a.setAttribute("href",treeNode.url);
+                i = document.createElement('i');
+                i.setAttribute("class",treeNode.icon);
+                span=  document.createElement('span');
+                text= document.createTextNode(treeNode.text);
+                span.appendChild(text);
+                a.appendChild(i);
+                a.appendChild(span);
+                li.appendChild(a);
+
+                domElement.appendChild(li);
+            }
+        }
+
+    </script>
+    {% endautoescape %}
+{% endblock %}

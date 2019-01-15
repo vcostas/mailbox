@@ -1,0 +1,55 @@
+{% extends 'login_base.html' %}
+{% load i18n static staticfiles %}
+
+{% block login_content %}
+<div class="container-login">
+{% if form.errors and not form.non_field_errors %}
+<p class="errornote">
+{% if form.errors.items|length == 1 %}{% trans "Please correct the error below." %}{% else %}{% trans "Please correct the errors below." %}{% endif %}
+</p>
+{% endif %}
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <i class="fa fa-info-circle"></i>  <strong>{{ error }}</strong>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<form class="form-signin" action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+
+    <table border="0" width="100%">
+        <tr>
+            <td><img width="50px" height="69px" src="{{url_logo}}">
+            </td>
+            <td style="text-align: right"><h3 class="form-signin-institution">{{login_title}}</h3></td>
+        </tr>
+    </table>
+    <br>
+
+      {{ form.username.errors }}
+    <input id="id_username" name="username" type="username" class="form-control"
+         placeholder="Usuario" required autofocus maxlength="50" type="text"/>
+    <br>
+    {{ form.password.errors }}
+    <input  id="id_password" name="password" type="password" class="form-control"
+          placeholder="Contraseña" required >
+    <br>
+
+    <a href="/reset_password">
+        <span>¿olvidaste tu contraseña?</span>
+    </a>
+    <br><br>
+
+<button class="btn btn-primary btn-block fa fa-graduation-cap" type="submit"> Ingresar </button>
+</form>
+</div>
+{% endblock %}
+
+ 

@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% block object-tools %}
+<div id="content-navbar-collapse" class="navbar-collapse collapse">
+    <ul class="object-tools nav navbar-nav">
+    	<h4>
+			Agregar Alumno
+		</h4>
+	</ul>
+</div>
+{% endblock %}
+
+{% block content %}
+	{% if not success %}
+		<form class="form-horizontal" action="" method="POST">
+		{% csrf_token %} 
+		<div class="form-group">
+		{{form.as_p}}
+		</div>
+
+			   <input type="submit" value="Crear"  class="btn btn-primary"></input>
+		</form>
+	{% else %}
+		<div class="alert alert-success">
+		  	Se creó el alumno con éxito!.
+		</div>
+		<a role="button" href="/app/admin/" class="btn btn-primary">Volver al inicio</a>
+	{% endif %}
+{% endblock %}

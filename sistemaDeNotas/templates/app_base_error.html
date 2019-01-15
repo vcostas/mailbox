@@ -1,0 +1,29 @@
+{% extends 'adminlte/base.html' %}
+
+<title>
+    {% block title %}
+    {% endblock %}
+</title>
+
+{% block branding %}{% endblock %}
+
+{% block javascript %}
+    {% block javascript_extras_top %}{% endblock javascript_extras_top%}
+    {% include 'adminlte/lib/_scripts.html' %}
+    {% block javascript_extras %}{% endblock javascript_extras%}
+{% endblock %}
+
+{% block stylesheets %}
+    {% include 'adminlte/lib/_styles.html' %}
+    {% block stylesheets_extras %}{% endblock stylesheets_extras%}
+{% endblock %}
+
+{% block nav_header %}
+{% endblock %}
+
+{% block nav_sidebar %}
+{% endblock nav_sidebar %}
+
+{% block nav_footer %}
+{% endblock %}
+
